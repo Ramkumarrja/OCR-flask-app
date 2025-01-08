@@ -98,8 +98,8 @@ def extract_text():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-    
-@app.route("/", methods=["POST"])
+
+@app.route("/", methods=["GET"])
 def testing():
     return jsonify({"message": "server running "})
 
