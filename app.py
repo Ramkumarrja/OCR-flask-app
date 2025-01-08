@@ -6,8 +6,6 @@ import json
 from dotenv import load_dotenv
 from flask_cors import CORS
 
-
-
 # Load environment variables
 load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
@@ -18,7 +16,7 @@ app = Flask(__name__)
 CORS(app)
 
 # Directory to save extracted data
-DATA_FOLDER = 'data'
+DATA_FOLDER = '/tmp/data'  # Update to use the writable /tmp directory
 os.makedirs(DATA_FOLDER, exist_ok=True)
 
 # Function to encode the image to base64
