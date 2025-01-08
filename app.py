@@ -99,6 +99,10 @@ def extract_text():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+@app.route("/", methods=["GET"])
+def testing():
+    return jsonify({"message": "server running "})
+
 # Run Flask app
 if __name__ == "__main__":
     app.run(debug=True)
